@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>汉诺塔迭代算法</title>
+	<style>
+		*{margin:0;padding:0;}
+		h1{margin:15px 0;}
+		body{width:100%;height:100%}
+		#content{text-align:center;}
+		#control{line-height:30px;margin:20px;}
+		#log{width:800px;text-align:center;margin:0 auto;}
+		#view{width:800px;height:200px;background-color: rgb(225, 248, 252);margin:20px auto;vertical-align: bottom;}
+		#view,#txtlog,#detaillog,.dizuo,.block{border:1px solid black;position: relative;}
+
+		.dizuo{position: absolute;width:200px;height:20px;background-color:black;top:180px;color:white;}
+		.shugun{position: absolute;height:180px;width:4px;background-color:black;}
+		.sg1{left:148px;}
+		.sg2{left:398px;}
+		.sg3{left:648px;}
+		.dz1{left:50px;}
+		.dz2{left:300px;}
+		.dz3{left:550px;}
+
+		#block{position:absolute;}
+		.block{position:absolute;background-color:rgb(172,172,235);z-index:9999;}
+		
+		.log{width:228px;float:left;text-align:left;margin:0 4px;}
+		</style>
+	<script type="text/javascript" src="jquery-1.9.0.js"></script>
+	<script type="text/javascript" src="hanoi.js"></script>
+	<style>
+		#test{width:500px;height:200px;position: relative;background-color: yellow;}
+		.t1,.t2{width:100px;height:20px;background-color:red;position: absolute;}
+		.t1{top:0px;}
+		.t2{top:50px;}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<div id="control">
+			<h1>汉诺塔演示程序<a href="http://blog.csdn.net/isea533" style="text-decoration:none;">@isea533</a></h1>
+			<label for="num">数量:</label>
+			<input type="text" id="num" value="4" />
+			<label for="speed">速度(单位ms):</label>
+			<input type="text" id="speed" value="500" />
+			<input type="button" value="初始化" id="init" />
+			<input type="button" value="开始" id="start" />
+		</div>
+
+		<div id="view">
+			<div id="block">
+				<!-- 这里存放各种块 -->
+
+			</div>
+			<div class="shugun sg1"></div>
+			<div class="shugun sg2"></div>
+			<div class="shugun sg3"></div>
+			<div class="dizuo dz1">A</div>
+			<div class="dizuo dz2">B</div>
+			<div class="dizuo dz3">C</div>
+		</div>
+		<div id="log">
+			<div class="log">移动步骤</div><div class="log" style="width:500px;">详细操作(上下左右移动操作会分步执行 - 对应一个order)</div>
+			<div style="clear:both;">
+				<textarea name="txtlog" id="txtlog" cols="30" rows="10"></textarea>
+				<textarea name="detaillog" id="detaillog" cols="77" rows="10"></textarea>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
